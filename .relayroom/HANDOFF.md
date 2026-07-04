@@ -1,19 +1,19 @@
 # Relayroom Handoff: relayroom
 
-Captured: 2026-07-04T01:56:32.487Z
+Captured: 2026-07-04T01:57:44.778Z
 
 ## Current Task
 
-Relayroom published to GitHub
+Relayroom published end to end
 
 ## Current State
 
-Initial CLI, adapter workflow, static website, tests, and documentation are pushed to https://github.com/toyeshhm/relayroom.
+Repository is pushed to https://github.com/toyeshhm/relayroom and the static website is deployed at https://toyeshhm.github.io/relayroom/. Tests and browser checks passed.
 
 ## Repository
 
 - Branch: main
-- HEAD: 67b9b62
+- HEAD: 3fa5a91
 - Working tree: clean
 
 ## Useful Commands
@@ -24,6 +24,8 @@ Initial CLI, adapter workflow, static website, tests, and documentation are push
 ## Recent Commits
 
 ```text
+3fa5a91 Publish Relayroom site with GitHub Pages
+ccecf92 Update Relayroom publication handoff
 67b9b62 Create Relayroom context handoff tool
 ```
 
