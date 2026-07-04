@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "id": "20260704020123",
+  "createdAt": "2026-07-04T02:01:23.392Z",
+  "project": "relayroom",
+  "root": "/Users/medikonda/Documents/Codex/2026-07-03/i-know-devs-use-claude-code/outputs/relayroom",
+  "fingerprint": "1890e30f1bb9",
+  "task": "Improve website typography readability",
+  "note": "Hero and section typography were tuned for readability: smaller display scale, wider headline measure, calmer line-height, better lede rhythm, and clean mobile rendering.",
+  "git": {
+    "available": true,
+    "branch": "main",
+    "head": "7942bb2",
+    "statusShort": "M site/styles.css",
+    "diffStat": "site/styles.css | 32 ++++++++++++++++++++------------\n 1 file changed, 20 insertions(+), 12 deletions(-)",
+    "stagedDiffStat": "",
+    "recentCommits": "7942bb2 Record final Relayroom handoff\n3fa5a91 Publish Relayroom site with GitHub Pages\nccecf92 Update Relayroom publication handoff\n67b9b62 Create Relayroom context handoff tool",
+    "untrackedFiles": []
+  },
+  "package": {
+    "name": "@toyeshhm/relayroom",
+    "version": "0.1.0",
+    "scripts": {
+      "test": "node --test",
+      "start:site": "node ./scripts/serve-site.js"
+    }
+  }
+}

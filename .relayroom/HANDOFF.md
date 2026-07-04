@@ -1,20 +1,26 @@
 # Relayroom Handoff: relayroom
 
-Captured: 2026-07-04T01:57:44.778Z
+Captured: 2026-07-04T02:01:23.392Z
 
 ## Current Task
 
-Relayroom published end to end
+Improve website typography readability
 
 ## Current State
 
-Repository is pushed to https://github.com/toyeshhm/relayroom and the static website is deployed at https://toyeshhm.github.io/relayroom/. Tests and browser checks passed.
+Hero and section typography were tuned for readability: smaller display scale, wider headline measure, calmer line-height, better lede rhythm, and clean mobile rendering.
 
 ## Repository
 
 - Branch: main
-- HEAD: 3fa5a91
-- Working tree: clean
+- HEAD: 7942bb2
+- Working tree: has changes
+- Unstaged diff stat:
+
+```text
+site/styles.css | 32 ++++++++++++++++++++------------
+ 1 file changed, 20 insertions(+), 12 deletions(-)
+```
 
 ## Useful Commands
 
@@ -24,6 +30,7 @@ Repository is pushed to https://github.com/toyeshhm/relayroom and the static web
 ## Recent Commits
 
 ```text
+7942bb2 Record final Relayroom handoff
 3fa5a91 Publish Relayroom site with GitHub Pages
 ccecf92 Update Relayroom publication handoff
 67b9b62 Create Relayroom context handoff tool

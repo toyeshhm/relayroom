@@ -35,7 +35,10 @@ body {
   background-size: 56px 56px;
   color: var(--ink);
   font-family: var(--font-body);
+  line-height: 1.55;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -95,7 +98,7 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.96fr);
   gap: clamp(28px, 5vw, 72px);
   align-items: center;
   min-height: calc(100vh - 70px);
@@ -123,19 +126,20 @@ p {
 }
 
 h1 {
-  max-width: 780px;
-  margin-bottom: 22px;
+  max-width: 720px;
+  margin-bottom: 24px;
   font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 104px);
+  font-size: clamp(36px, 4.4vw, 64px);
   font-weight: 700;
-  line-height: 0.92;
+  line-height: 1.1;
+  text-wrap: balance;
 }
 
 .lede {
-  max-width: 650px;
+  max-width: 610px;
   color: var(--steel);
-  font-size: clamp(18px, 2vw, 22px);
-  line-height: 1.5;
+  font-size: clamp(17px, 1.55vw, 20px);
+  line-height: 1.62;
 }
 
 .hero-actions {
@@ -350,10 +354,11 @@ h1 {
 }
 
 .section h2 {
-  max-width: 760px;
+  max-width: 720px;
   font-family: var(--font-display);
-  font-size: clamp(34px, 4.5vw, 64px);
-  line-height: 1;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.08;
+  text-wrap: balance;
 }
 
 .protocol,
@@ -390,6 +395,8 @@ h1 {
 .steps b,
 .feature-grid h3 {
   font-size: 20px;
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
 .steps p,
@@ -518,7 +525,8 @@ h1 {
 
 @media (max-width: 560px) {
   h1 {
-    font-size: 44px;
+    font-size: 34px;
+    line-height: 1.12;
   }
 
   .stations {
