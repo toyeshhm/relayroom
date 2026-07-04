@@ -1,21 +1,20 @@
 # Relayroom Handoff: relayroom
 
-Captured: 2026-07-04T01:53:45.477Z
+Captured: 2026-07-04T01:56:32.487Z
 
 ## Current Task
 
-Ship Relayroom CLI and original website
+Relayroom published to GitHub
 
 ## Current State
 
-CLI, tests, static website, docs, and agent adapters are implemented. GitHub publication is next.
+Initial CLI, adapter workflow, static website, tests, and documentation are pushed to https://github.com/toyeshhm/relayroom.
 
 ## Repository
 
 - Branch: main
-- HEAD: 
-- Working tree: has changes
-- Untracked files: .cursor/rules/relayroom.mdc, .gitignore, .relayroom/.gitignore, .relayroom/HANDOFF.md, .relayroom/config.json, .relayroom/notes.md, .relayroom/snapshots/20260704015330.json, AGENTS.md, CLAUDE.md, LICENSE, README.md, bin/relayroom.js, package.json, scripts/serve-site.js, site/assets/protocol-map.svg, site/index.html, site/site.js, site/styles.css, src/cli.js, src/core.js, src/templates.js, test/relayroom.test.js
+- HEAD: 67b9b62
+- Working tree: clean
 
 ## Useful Commands
 
@@ -25,7 +24,7 @@ CLI, tests, static website, docs, and agent adapters are implemented. GitHub pub
 ## Recent Commits
 
 ```text
-No recent commits detected.
+67b9b62 Create Relayroom context handoff tool
 ```
 
 ## Durable Notes

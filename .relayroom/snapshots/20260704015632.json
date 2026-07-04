@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "id": "20260704015632",
+  "createdAt": "2026-07-04T01:56:32.487Z",
+  "project": "relayroom",
+  "root": "/Users/medikonda/Documents/Codex/2026-07-03/i-know-devs-use-claude-code/outputs/relayroom",
+  "fingerprint": "1890e30f1bb9",
+  "task": "Relayroom published to GitHub",
+  "note": "Initial CLI, adapter workflow, static website, tests, and documentation are pushed to https://github.com/toyeshhm/relayroom.",
+  "git": {
+    "available": true,
+    "branch": "main",
+    "head": "67b9b62",
+    "statusShort": "",
+    "diffStat": "",
+    "stagedDiffStat": "",
+    "recentCommits": "67b9b62 Create Relayroom context handoff tool",
+    "untrackedFiles": []
+  },
+  "package": {
+    "name": "@toyeshhm/relayroom",
+    "version": "0.1.0",
+    "scripts": {
+      "test": "node --test",
+      "start:site": "node ./scripts/serve-site.js"
+    }
+  }
+}
