@@ -1,26 +1,29 @@
 # Relayroom Handoff: relayroom
 
-Captured: 2026-07-04T02:01:23.392Z
+Captured: 2026-07-04T02:05:35.891Z
 
 ## Current Task
 
-Improve website typography readability
+Add Relayroom documentation pages
 
 ## Current State
 
-Hero and section typography were tuned for readability: smaller display scale, wider headline measure, calmer line-height, better lede rhythm, and clean mobile rendering.
+Added a full docs page covering install, setup, daily handoff flow, adapters, command reference, team usage, and safety notes. Homepage links now point to docs.
 
 ## Repository
 
 - Branch: main
-- HEAD: 7942bb2
+- HEAD: baba2f5
 - Working tree: has changes
 - Unstaged diff stat:
 
 ```text
-site/styles.css | 32 ++++++++++++++++++++------------
- 1 file changed, 20 insertions(+), 12 deletions(-)
+README.md       |   2 +
+ site/index.html |  15 +++--
+ site/styles.css | 193 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 3 files changed, 202 insertions(+), 8 deletions(-)
 ```
+- Untracked files: site/docs.html
 
 ## Useful Commands
 
@@ -30,6 +33,7 @@ site/styles.css | 32 ++++++++++++++++++++------------
 ## Recent Commits
 
 ```text
+baba2f5 Improve website typography readability
 7942bb2 Record final Relayroom handoff
 3fa5a91 Publish Relayroom site with GitHub Pages
 ccecf92 Update Relayroom publication handoff

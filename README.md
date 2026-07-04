@@ -70,6 +70,8 @@ npm run start:site
 
 Live site: https://toyeshhm.github.io/relayroom/
 
+Docs: https://toyeshhm.github.io/relayroom/docs.html
+
 ## License
 
 MIT

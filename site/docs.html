@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relayroom docs - setup and workflow</title>
+    <meta name="description" content="Learn how Relayroom transfers context between Claude Code, Cursor, Codex, and other AI coding tools.">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar" aria-label="Primary">
+      <a class="brand" href="./index.html" aria-label="Relayroom home">
+        <span class="brand-mark">R</span>
+        <span>Relayroom</span>
+      </a>
+      <nav class="nav">
+        <a href="./index.html#how">How it works</a>
+        <a href="./index.html#cli">CLI</a>
+        <a href="./docs.html" aria-current="page">Docs</a>
+        <a class="nav-action" href="https://github.com/toyeshhm/relayroom">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="docs-hero" aria-labelledby="docs-title">
+        <p class="eyebrow">Relayroom field manual</p>
+        <h1 id="docs-title">Setup and run context handoffs without re-explaining the project.</h1>
+        <p class="lede">Relayroom gives every coding agent the same local handoff file. Use it when Claude Code runs out of context, Cursor needs the latest task state, or Codex is taking over review.</p>
+      </section>
+
+      <section class="docs-shell" aria-label="Relayroom documentation">
+        <aside class="docs-toc" aria-label="Documentation sections">
+          <a href="#install">Install</a>
+          <a href="#setup">Setup</a>
+          <a href="#daily-flow">Daily flow</a>
+          <a href="#adapters">Adapters</a>
+          <a href="#commands">Commands</a>
+          <a href="#teams">Teams</a>
+          <a href="#safety">Safety</a>
+        </aside>
+
+        <div class="docs-content">
+          <section id="install" class="doc-section">
+            <p class="eyebrow">Step one</p>
+            <h2>Install Relayroom</h2>
+            <p>Install from the GitHub repo or run from a checkout. Relayroom is a Node CLI and requires Node 20 or newer.</p>
+            <pre><code>npm install -g github:toyeshhm/relayroom
+relayroom help</code></pre>
+          </section>
+
+          <section id="setup" class="doc-section">
+            <p class="eyebrow">Step two</p>
+            <h2>Initialize a project</h2>
+            <p>Run these commands at the root of the repo you want agents to share. Relayroom creates `.relayroom/`, then installs small adapter blocks into each tool's native context file.</p>
+            <pre><code>cd your-project
+relayroom init
+relayroom adapters install</code></pre>
+            <div class="doc-callout">
+              <b>What gets created</b>
+              <p><code>AGENTS.md</code> for Codex, <code>CLAUDE.md</code> for Claude Code, <code>.cursor/rules/relayroom.mdc</code> for Cursor, and <code>.relayroom/HANDOFF.md</code> as the shared source of truth.</p>
+            </div>
+          </section>
+
+          <section id="daily-flow" class="doc-section">
+            <p class="eyebrow">Core loop</p>
+            <h2>Use one small habit before switching tools</h2>
+            <div class="flow-list">
+              <article>
+                <span>01</span>
+                <h3>Add durable context</h3>
+                <p>Use notes for decisions, constraints, and facts the next agent should not rediscover.</p>
+                <pre><code>relayroom note "Auth uses Supabase. Service role keys stay server-only."</code></pre>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Capture current state</h3>
+                <p>Use capture before pausing, reviewing, or handing the repo to another tool.</p>
+                <pre><code>relayroom capture \
+  --task "Build checkout flow" \
+  --note "Cart UI works; webhook tests remain."</code></pre>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>Resume in the next agent</h3>
+                <p>Print or copy an agent-specific prompt that includes the current handoff.</p>
+                <pre><code>relayroom resume codex --print
+relayroom resume claude --copy</code></pre>
+              </article>
+            </div>
+          </section>
+
+          <section id="adapters" class="doc-section">
+            <p class="eyebrow">How transfer works</p>
+            <h2>Relayroom uses files the agents already read</h2>
+            <p>There is no private API dependency. The adapters simply tell each tool to read `.relayroom/HANDOFF.md` before making changes.</p>
+            <div class="adapter-grid">
+              <article>
+                <h3>Codex</h3>
+                <p><code>AGENTS.md</code> points Codex at the shared handoff.</p>
+              </article>
+              <article>
+                <h3>Claude Code</h3>
+                <p><code>CLAUDE.md</code> points Claude Code at the same handoff.</p>
+              </article>
+              <article>
+                <h3>Cursor</h3>
+                <p><code>.cursor/rules/relayroom.mdc</code> applies the handoff rule in Cursor.</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="commands" class="doc-section">
+            <p class="eyebrow">Reference</p>
+            <h2>Command reference</h2>
+            <table class="command-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Use it for</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>relayroom init</code></td>
+                  <td>Create `.relayroom/`, config, notes, and the first handoff file.</td>
+                </tr>
+                <tr>
+                  <td><code>relayroom adapters install</code></td>
+                  <td>Install Codex, Claude Code, and Cursor context pointers.</td>
+                </tr>
+                <tr>
+                  <td><code>relayroom note "fact"</code></td>
+                  <td>Save durable project memory.</td>
+                </tr>
+                <tr>
+                  <td><code>relayroom capture --task --note</code></td>
+                  <td>Snapshot the current work state into the handoff.</td>
+                </tr>
+                <tr>
+                  <td><code>relayroom resume codex --print</code></td>
+                  <td>Print a ready-to-paste resume prompt for a target agent.</td>
+                </tr>
+                <tr>
+                  <td><code>relayroom pack --agent cursor</code></td>
+                  <td>Export a standalone handoff pack.</td>
+                </tr>
+                <tr>
+                  <td><code>relayroom status</code></td>
+                  <td>Inspect Relayroom and git state as JSON.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="teams" class="doc-section">
+            <p class="eyebrow">Working with others</p>
+            <h2>Commit useful context, ignore private packs</h2>
+            <p>Commit `.relayroom/HANDOFF.md`, `.relayroom/notes.md`, and adapter files when they help teammates. Relayroom ignores `.relayroom/packs/*.local.md` so personal exports do not leak into the repo by accident.</p>
+            <pre><code>git add .relayroom AGENTS.md CLAUDE.md .cursor/rules/relayroom.mdc
+git commit -m "Add Relayroom project handoff"</code></pre>
+          </section>
+
+          <section id="safety" class="doc-section">
+            <p class="eyebrow">Guardrails</p>
+            <h2>Do not store secrets in handoffs</h2>
+            <p>Relayroom is plain text by design. It captures branch, status, diff stats, recent commits, and your notes. Keep API keys, tokens, customer data, and private credentials out of notes and captures.</p>
+            <div class="doc-callout danger">
+              <b>Good handoff</b>
+              <p><code>OAuth callback is failing because EBAY_REDIRECT_URI does not match the app config.</code></p>
+              <b>Avoid</b>
+              <p><code>OAuth callback uses token abc123...</code></p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Relayroom docs</span>
+      <span>
+        <a href="./index.html">Home</a>
+        <a href="https://github.com/toyeshhm/relayroom">GitHub</a>
+      </span>
+    </footer>
+  </body>
+</html>

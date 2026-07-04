@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "id": "20260704020535",
+  "createdAt": "2026-07-04T02:05:35.891Z",
+  "project": "relayroom",
+  "root": "/Users/medikonda/Documents/Codex/2026-07-03/i-know-devs-use-claude-code/outputs/relayroom",
+  "fingerprint": "1890e30f1bb9",
+  "task": "Add Relayroom documentation pages",
+  "note": "Added a full docs page covering install, setup, daily handoff flow, adapters, command reference, team usage, and safety notes. Homepage links now point to docs.",
+  "git": {
+    "available": true,
+    "branch": "main",
+    "head": "baba2f5",
+    "statusShort": "M README.md\n M site/index.html\n M site/styles.css\n?? site/docs.html",
+    "diffStat": "README.md       |   2 +\n site/index.html |  15 +++--\n site/styles.css | 193 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-\n 3 files changed, 202 insertions(+), 8 deletions(-)",
+    "stagedDiffStat": "",
+    "recentCommits": "baba2f5 Improve website typography readability\n7942bb2 Record final Relayroom handoff\n3fa5a91 Publish Relayroom site with GitHub Pages\nccecf92 Update Relayroom publication handoff\n67b9b62 Create Relayroom context handoff tool",
+    "untrackedFiles": [
+      "site/docs.html"
+    ]
+  },
+  "package": {
+    "name": "@toyeshhm/relayroom",
+    "version": "0.1.0",
+    "scripts": {
+      "test": "node --test",
+      "start:site": "node ./scripts/serve-site.js"
+    }
+  }
+}
