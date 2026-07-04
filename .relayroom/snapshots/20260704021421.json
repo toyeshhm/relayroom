@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "id": "20260704021421",
+  "createdAt": "2026-07-04T02:14:21.442Z",
+  "project": "relayroom",
+  "root": "/Users/medikonda/Documents/Codex/2026-07-03/i-know-devs-use-claude-code/outputs/relayroom",
+  "fingerprint": "1890e30f1bb9",
+  "task": "Revamp frontend typography and Lighthouse quality",
+  "note": "Homepage and docs were redesigned around a calmer field-manual typography system. Hero copy is shorter, headings/body rhythm were rebuilt, contrast/ARIA/favicon/image sizing issues were fixed, and Lighthouse scores are 100/100/100/100/100 for both homepage and docs locally.",
+  "git": {
+    "available": true,
+    "branch": "main",
+    "head": "cf26ffd",
+    "statusShort": "M site/docs.html\n M site/index.html\n M site/styles.css\n?? site/assets/favicon.svg",
+    "diffStat": "site/docs.html  |  12 +-\n site/index.html |  31 ++--\n site/styles.css | 503 ++++++++++++++++++++++++++++++++------------------------\n 3 files changed, 317 insertions(+), 229 deletions(-)",
+    "stagedDiffStat": "",
+    "recentCommits": "cf26ffd Add product documentation pages\nbaba2f5 Improve website typography readability\n7942bb2 Record final Relayroom handoff\n3fa5a91 Publish Relayroom site with GitHub Pages\nccecf92 Update Relayroom publication handoff",
+    "untrackedFiles": [
+      "site/assets/favicon.svg"
+    ]
+  },
+  "package": {
+    "name": "@toyeshhm/relayroom",
+    "version": "0.1.0",
+    "scripts": {
+      "test": "node --test",
+      "start:site": "node ./scripts/serve-site.js"
+    }
+  }
+}

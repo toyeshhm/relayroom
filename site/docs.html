@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Relayroom docs - setup and workflow</title>
     <meta name="description" content="Learn how Relayroom transfers context between Claude Code, Cursor, Codex, and other AI coding tools.">
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#docs-main">Skip to content</a>
     <header class="topbar" aria-label="Primary">
-      <a class="brand" href="./index.html" aria-label="Relayroom home">
-        <span class="brand-mark">R</span>
+      <a class="brand" href="./index.html">
+        <span class="brand-mark" aria-hidden="true">R</span>
         <span>Relayroom</span>
       </a>
       <nav class="nav">
@@ -21,11 +23,11 @@
       </nav>
     </header>
 
-    <main>
+    <main id="docs-main">
       <section class="docs-hero" aria-labelledby="docs-title">
         <p class="eyebrow">Relayroom field manual</p>
-        <h1 id="docs-title">Setup and run context handoffs without re-explaining the project.</h1>
-        <p class="lede">Relayroom gives every coding agent the same local handoff file. Use it when Claude Code runs out of context, Cursor needs the latest task state, or Codex is taking over review.</p>
+        <h1 id="docs-title">Run context handoffs without re-explaining the project.</h1>
+        <p class="lede">Install Relayroom, point your agents at one handoff file, and capture the current state before you switch tools.</p>
       </section>
 
       <section class="docs-shell" aria-label="Relayroom documentation">

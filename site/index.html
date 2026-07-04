@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Relayroom - context handoff for AI coding tools</title>
     <meta name="description" content="Relayroom keeps project context portable between Claude Code, Cursor, Codex, and other AI coding agents.">
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="topbar" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Relayroom home">
-        <span class="brand-mark">R</span>
+      <a class="brand" href="./index.html">
+        <span class="brand-mark" aria-hidden="true">R</span>
         <span>Relayroom</span>
       </a>
       <nav class="nav">
@@ -21,12 +23,17 @@
       </nav>
     </header>
 
-    <main id="top">
+    <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">For developers who switch brains mid-build</p>
-          <h1 id="hero-title">One handoff room for Claude Code, Cursor, Codex, and whatever ships next.</h1>
-          <p class="lede">Relayroom writes the shared project memory your AI coding tools already know how to read. Stop re-explaining the task every time a token meter, review pass, or model preference changes.</p>
+          <p class="eyebrow">For developers switching AI tools mid-build</p>
+          <h1 id="hero-title">Relayroom keeps coding context moving.</h1>
+          <p class="lede">Carry the task, decisions, git state, and next steps between Claude Code, Cursor, Codex, and whatever you open next.</p>
+          <div class="hero-proof" aria-label="Relayroom summary">
+            <span>Local-first</span>
+            <span>No vendor API</span>
+            <span>Plain text</span>
+          </div>
           <div class="hero-actions">
             <a class="button primary" href="#cli">Install the CLI</a>
             <a class="button secondary" href="./docs.html">Read the docs</a>
@@ -69,7 +76,7 @@
               <p>resumes with context</p>
             </article>
           </div>
-          <pre class="mini-terminal"><code>$ relayroom capture --task "OAuth"
+          <pre class="mini-terminal"><code>$ relayroom capture --task "OAuth callback"
 updated .relayroom/HANDOFF.md
 $ relayroom resume codex --print</code></pre>
         </div>
@@ -85,10 +92,10 @@ $ relayroom resume codex --print</code></pre>
       <section class="section how" id="how" aria-labelledby="how-title">
         <div class="section-head">
           <p class="eyebrow">The transfer protocol</p>
-          <h2 id="how-title">Relayroom uses boring files in a useful pattern.</h2>
+          <h2 id="how-title">One shared handoff, read by every agent.</h2>
         </div>
         <div class="protocol">
-          <img src="./assets/protocol-map.svg" alt="Relayroom maps Codex, Claude Code, and Cursor to one shared handoff file.">
+          <img src="./assets/protocol-map.svg" width="960" height="560" alt="Relayroom maps Codex, Claude Code, and Cursor to one shared handoff file.">
           <div class="steps">
             <article>
               <b>Capture</b>
@@ -109,11 +116,11 @@ $ relayroom resume codex --print</code></pre>
       <section class="section cli" id="cli" aria-labelledby="cli-title">
         <div>
           <p class="eyebrow">No vendor API required</p>
-          <h2 id="cli-title">Install, initialize, and switch without losing the plot.</h2>
+          <h2 id="cli-title">Install it once. Capture before every switch.</h2>
           <p>Relayroom stays local-first and plain-text. The source of truth lives in the repo so it can move with your branch, your PR, and your next tool.</p>
         </div>
         <div class="command-card">
-          <div class="tabs" role="tablist" aria-label="Command examples">
+          <div class="tabs" aria-label="Command examples">
             <button class="tab active" type="button" data-panel="install">Install</button>
             <button class="tab" type="button" data-panel="capture">Capture</button>
             <button class="tab" type="button" data-panel="resume">Resume</button>
@@ -145,7 +152,7 @@ relayroom adapters install</code></pre>
       <section class="section site-note" id="site" aria-labelledby="site-title">
         <div>
           <p class="eyebrow">Documentation included</p>
-          <h2 id="site-title">Setup, switch workflows, and command reference are documented.</h2>
+          <h2 id="site-title">Setup, workflow, and command reference are documented.</h2>
         </div>
         <p>Open <a href="./docs.html">the docs</a> for installation, adapter setup, team usage, safety notes, and exact commands. Run <code>npm run start:site</code> to serve everything locally.</p>
       </section>
