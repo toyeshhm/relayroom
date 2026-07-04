@@ -1,0 +1,38 @@
+{
+  "name": "@toyeshhm/relayroom",
+  "version": "0.1.0",
+  "description": "A local-first context handoff tool for switching between Claude Code, Cursor, Codex, and other AI coding agents.",
+  "type": "module",
+  "bin": {
+    "relayroom": "./bin/relayroom.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "scripts",
+    "site",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./src/core.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start:site": "node ./scripts/serve-site.js"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "codex",
+    "claude-code",
+    "cursor",
+    "context",
+    "handoff"
+  ],
+  "author": "Medikonda",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

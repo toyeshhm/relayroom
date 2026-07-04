@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relayroom - context handoff for AI coding tools</title>
+    <meta name="description" content="Relayroom keeps project context portable between Claude Code, Cursor, Codex, and other AI coding agents.">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Relayroom home">
+        <span class="brand-mark">R</span>
+        <span>Relayroom</span>
+      </a>
+      <nav class="nav">
+        <a href="#how">How it works</a>
+        <a href="#cli">CLI</a>
+        <a href="#site">Website</a>
+        <a class="nav-action" href="https://github.com/toyeshhm/relayroom">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">For developers who switch brains mid-build</p>
+          <h1 id="hero-title">One handoff room for Claude Code, Cursor, Codex, and whatever ships next.</h1>
+          <p class="lede">Relayroom writes the shared project memory your AI coding tools already know how to read. Stop re-explaining the task every time a token meter, review pass, or model preference changes.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#cli">Install the CLI</a>
+            <a class="button secondary" href="#how">Watch the handoff</a>
+          </div>
+        </div>
+
+        <div class="switchboard" aria-label="Live Relayroom context board">
+          <div class="board-top">
+            <span>LIVE HANDOFF</span>
+            <span class="pulse">synced</span>
+          </div>
+          <div class="rail" aria-hidden="true">
+            <div class="packet packet-a">
+              <span>task</span>
+              <strong>Auth callback</strong>
+            </div>
+            <div class="packet packet-b">
+              <span>state</span>
+              <strong>tests pass</strong>
+            </div>
+            <div class="packet packet-c">
+              <span>decision</span>
+              <strong>server keys only</strong>
+            </div>
+          </div>
+          <div class="stations">
+            <article>
+              <span class="station-light"></span>
+              <h2>Claude Code</h2>
+              <p>captures the work</p>
+            </article>
+            <article>
+              <span class="station-light"></span>
+              <h2>Relayroom</h2>
+              <p>writes the handoff</p>
+            </article>
+            <article>
+              <span class="station-light"></span>
+              <h2>Codex</h2>
+              <p>resumes with context</p>
+            </article>
+          </div>
+          <pre class="mini-terminal"><code>$ relayroom capture --task "OAuth"
+updated .relayroom/HANDOFF.md
+$ relayroom resume codex --print</code></pre>
+        </div>
+      </section>
+
+      <section class="strip" aria-label="Supported handoff targets">
+        <span>AGENTS.md</span>
+        <span>CLAUDE.md</span>
+        <span>.cursor/rules</span>
+        <span>.relayroom/HANDOFF.md</span>
+      </section>
+
+      <section class="section how" id="how" aria-labelledby="how-title">
+        <div class="section-head">
+          <p class="eyebrow">The transfer protocol</p>
+          <h2 id="how-title">Relayroom uses boring files in a useful pattern.</h2>
+        </div>
+        <div class="protocol">
+          <img src="./assets/protocol-map.svg" alt="Relayroom maps Codex, Claude Code, and Cursor to one shared handoff file.">
+          <div class="steps">
+            <article>
+              <b>Capture</b>
+              <p>Snapshot the task note, git branch, working-tree state, recent commits, and durable project notes.</p>
+            </article>
+            <article>
+              <b>Route</b>
+              <p>Install small adapter blocks into the context files each coding tool already reads.</p>
+            </article>
+            <article>
+              <b>Resume</b>
+              <p>Print or copy an agent-specific prompt that starts with the current handoff.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cli" id="cli" aria-labelledby="cli-title">
+        <div>
+          <p class="eyebrow">No vendor API required</p>
+          <h2 id="cli-title">Install, initialize, and switch without losing the plot.</h2>
+          <p>Relayroom stays local-first and plain-text. The source of truth lives in the repo so it can move with your branch, your PR, and your next tool.</p>
+        </div>
+        <div class="command-card">
+          <div class="tabs" role="tablist" aria-label="Command examples">
+            <button class="tab active" type="button" data-panel="install">Install</button>
+            <button class="tab" type="button" data-panel="capture">Capture</button>
+            <button class="tab" type="button" data-panel="resume">Resume</button>
+          </div>
+          <pre id="command-output"><code>npm install -g github:toyeshhm/relayroom
+relayroom init
+relayroom adapters install</code></pre>
+        </div>
+      </section>
+
+      <section class="section feature-grid" aria-label="Relayroom features">
+        <article>
+          <span class="feature-code">01</span>
+          <h3>Shared memory that survives the switch</h3>
+          <p>Durable notes sit beside generated handoffs, so decisions stay separate from momentary task state.</p>
+        </article>
+        <article>
+          <span class="feature-code">02</span>
+          <h3>Adapters, not lock-in</h3>
+          <p>Codex, Claude Code, and Cursor each get their native context file pointed at one shared room.</p>
+        </article>
+        <article>
+          <span class="feature-code">03</span>
+          <h3>Safe by default</h3>
+          <p>Captures use status, diff stats, commits, and your notes. Raw diffs and secrets stay out.</p>
+        </article>
+      </section>
+
+      <section class="section site-note" id="site" aria-labelledby="site-title">
+        <div>
+          <p class="eyebrow">Original site included</p>
+          <h2 id="site-title">The repo ships with this static product page.</h2>
+        </div>
+        <p>Run <code>npm run start:site</code> to serve it locally. No build pipeline, no framework tax, no extra context to explain to the next agent.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Relayroom</span>
+      <a href="https://github.com/toyeshhm/relayroom">GitHub</a>
+    </footer>
+
+    <script src="./site.js"></script>
+  </body>
+</html>

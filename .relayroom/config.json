@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "project": "relayroom",
+  "defaultAgent": "generic",
+  "createdAt": "2026-07-04T01:53:30.561Z",
+  "capture": {
+    "includeDiffStat": true,
+    "includeRecentCommits": true,
+    "includeUntrackedFiles": true
+  }
+}

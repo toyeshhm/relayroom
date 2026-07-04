@@ -1,0 +1,12 @@
+---
+description: Keep AI coding context synchronized with Relayroom
+alwaysApply: true
+---
+
+# Relayroom Context
+
+Read `.relayroom/HANDOFF.md` before making changes.
+
+Use `relayroom resume cursor --print` to get the current handoff prompt, `relayroom note "fact"` to preserve durable context, and `relayroom capture --task "task" --note "state"` before switching tools.
+
+Never write secrets into Relayroom files.
