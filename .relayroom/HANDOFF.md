@@ -1,29 +1,28 @@
 # Relayroom Handoff: relayroom
 
-Captured: 2026-07-04T02:14:21.442Z
+Captured: 2026-07-04T02:17:04.279Z
 
 ## Current Task
 
-Revamp frontend typography and Lighthouse quality
+Remove skip to content link
 
 ## Current State
 
-Homepage and docs were redesigned around a calmer field-manual typography system. Hero copy is shorter, headings/body rhythm were rebuilt, contrast/ARIA/favicon/image sizing issues were fixed, and Lighthouse scores are 100/100/100/100/100 for both homepage and docs locally.
+Removed the skip-to-content anchor and related CSS from the homepage and docs page per request. Tests pass.
 
 ## Repository
 
 - Branch: main
-- HEAD: cf26ffd
+- HEAD: 38fa078
 - Working tree: has changes
 - Unstaged diff stat:
 
 ```text
-site/docs.html  |  12 +-
- site/index.html |  31 ++--
- site/styles.css | 503 ++++++++++++++++++++++++++++++++------------------------
- 3 files changed, 317 insertions(+), 229 deletions(-)
+site/docs.html  |  1 -
+ site/index.html |  1 -
+ site/styles.css | 16 ----------------
+ 3 files changed, 18 deletions(-)
 ```
-- Untracked files: site/assets/favicon.svg
 
 ## Useful Commands
 
@@ -33,11 +32,11 @@ site/docs.html  |  12 +-
 ## Recent Commits
 
 ```text
+38fa078 Revamp frontend typography and quality
 cf26ffd Add product documentation pages
 baba2f5 Improve website typography readability
 7942bb2 Record final Relayroom handoff
 3fa5a91 Publish Relayroom site with GitHub Pages
-ccecf92 Update Relayroom publication handoff
 ```
 
 ## Durable Notes
